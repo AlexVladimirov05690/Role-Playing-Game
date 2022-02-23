@@ -33,10 +33,11 @@ public class World {
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
-                    System.out.println("Merch");
+                    Dealer dealer = new Dealer();
+                    dealer.sell(hero);
+                    setLocation();
                     break;
                 case "2":
-                    System.out.println("Forest");
                     Battle battle = new Battle(hero, randomMonster());
                     battle.start();
                     try {
