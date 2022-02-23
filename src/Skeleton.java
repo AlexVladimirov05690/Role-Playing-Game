@@ -1,5 +1,6 @@
 public class Skeleton extends Personage{
     public Skeleton() {
-        super("Skeleton");
+        super("Скелет");
+        System.out.println("Вам встречается Скелет!" + " Силой " + getPower());
     }
 }
