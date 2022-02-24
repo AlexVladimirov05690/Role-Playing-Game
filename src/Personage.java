@@ -1,8 +1,38 @@
 import java.util.Random;
 
 public abstract class Personage {
-    private String name;
+    private final String name;
     private int hp = 100;
+    private int power;
+    private int knack;
+    private int gold;
+    private int practice = 0;
+    private int level = 0;
+    boolean alive = true;
+    Random random = new Random();
+
+    public void setPower(int power) {
+        this.power += power;
+    }
+
+    public void setKnack(int knack) {
+        this.knack += knack;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level += level;
+    }
+
+
+    public int getPractice() {
+        return practice;
+    }
+
+
 
     public int getHp() {
         return hp;
@@ -17,16 +47,8 @@ public abstract class Personage {
     }
 
     public void setPractice(int practice) {
-        this.practice += 10;
+        this.practice += practice;
     }
-
-    private int power;
-    private int knack;
-    private int gold;
-    private int practice = 0;
-    boolean alive = true;
-    Random random = new Random();
-
 
     public int getPower() {
         return power;
@@ -72,6 +94,15 @@ public abstract class Personage {
         if(hp <= 0) {
             alive = false;
             System.out.println(name + " погибает...");
+        }
+    }
+
+    public void levelUp() {
+        if(getLevel() < getPractice() / 100) {
+            setLevel(1);
+            setPower(10);
+            setKnack(10);
+            System.out.println("Уровень повышен! Способности возрасли!");
         }
     }
 
