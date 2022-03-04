@@ -50,7 +50,7 @@ public class World {
                     } else result = false;
                     break;
                 case "3":
-                    System.out.println("Досвидания");
+                    System.out.println("До свидания");
                     result = false;
                     break;
                 default:
